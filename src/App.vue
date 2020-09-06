@@ -7,15 +7,11 @@
             : ''
            "
   >
-    <!-- condition1 ? value1
-         : condition2 ? value2
-         : condition3 ? value3
-    : value4;-->
     <main>
       <div class="search-box">
         <input
           v-model="query"
-          @keypress="fetchWeather"
+          @keypress.enter="fetchWeather"
           type="text"
           class="search-bar"
           placeholder="Search..."
@@ -47,8 +43,7 @@ export default {
     };
   },
   methods: {
-    fetchWeather(event) {
-      if (event.key === "Enter") {
+    fetchWeather() {
         fetch(
           `${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`
         )
@@ -56,7 +51,6 @@ export default {
             return res.json();
           })
           .then(this.setResults);
-      }
     },
     setResults(results) {
       this.weather = results;
