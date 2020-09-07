@@ -2,7 +2,7 @@
   <div
     id="app"
     :class="
-      typeof weather.main != 'undefined'
+            typeof weather.main != 'undefined'
             && weather.main.temp >= 16 ? 'cloud'
             : ''
            "
@@ -44,13 +44,13 @@ export default {
   },
   methods: {
     fetchWeather() {
-        fetch(
-          `${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`
-        )
-          .then((res) => {
-            return res.json();
-          })
-          .then(this.setResults);
+      fetch(
+        `${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`
+      )
+        .then((res) => {
+          return res.json();
+        })
+        .then(this.setResults);
     },
     setResults(results) {
       this.weather = results;
@@ -145,14 +145,14 @@ main {
   background: none;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 0px 16px 0px 16px;
+  border-radius: 0px 20px 0px 20px;
   transition: 300ms ease-in-out;
 }
 
 .search-box .search-bar:focus {
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 16px 0px 16px 0px;
+  border-radius: 20px 0px 20px 0px;
 }
 
 @media (min-width: 650px) {
