@@ -1,3 +1,5 @@
+![LiveDemo](https://github.com/Eyoatam/Weather-App/blob/master/src/assets/siteimg.png)
+
 # weather-app
 
 ## Project setup
